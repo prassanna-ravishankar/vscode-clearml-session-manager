@@ -106,10 +106,7 @@ export async function getWorkspaceSettings(
     config.get<string>('clearmlConfigFilePath', getDefaultClearmlConfigFilePath()),
     workspace
   );
-  const clearmlProject: string = resolveSetting(
-    config.get<string>('clearmlProject', "DevOps"),
-    workspace
-  );
+  const clearmlProject: string = resolveSetting(config.get<string>('clearmlProject', 'DevOps'), workspace);
   const workspaceSettings: ClearmlExtensionSettings = {
     clearmlConfigFilePath: clearmlConfigFilePath,
     interpreter: resolveSettings(interpreter, workspace),
@@ -144,7 +141,7 @@ export async function getGlobalSettings(namespace: string): Promise<ClearmlExten
     clearmlConfigFilePath:
       getGlobalValue<string>(config, 'clearmlConfigFilePath') ?? getDefaultClearmlConfigFilePath(),
     interpreter: interpreter ?? [],
-    clearmlProject: getGlobalValue<string>(config, 'clearmlProject') ?? "DevOps",
+    clearmlProject: getGlobalValue<string>(config, 'clearmlProject') ?? 'DevOps',
   };
   return settings;
 }
