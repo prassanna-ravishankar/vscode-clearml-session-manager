@@ -7,6 +7,11 @@ export const getPathToClearmlConfigFile = async (): Promise<string> => {
   return settings.clearmlConfigFilePath;
 };
 
+export const getProjectName = async (): Promise<string> => {
+  const settings: ClearmlExtensionSettings = await getExtensionSettings();
+  return settings.clearmlProject;
+};
+
 export const fetchClearmlSessions = async (): Promise<Task[]> => {
   const clearmlConfigFpath: string = await getPathToClearmlConfigFile();
   const clearmlClient = await ClearMLApiClient.fromConfigFile(clearmlConfigFpath);
@@ -16,10 +21,10 @@ export const fetchClearmlSessions = async (): Promise<Task[]> => {
 };
 
 const listClearmlSessions = async (clearmlClient: ClearMLApiClient): Promise<Task[]> => {
-  const devopsProjectId = await clearmlClient.getProjectIdByName('DevOps');
+  const clearmlProjectName: string = await getProjectName();
+  const devopsProjectId = await clearmlClient.getProjectIdByName(clearmlProjectName);
   const interactiveSessions = await clearmlClient.getTasks({
     projectIds: [devopsProjectId],
-    name: 'Interactive Session',
     statuses: ['in_progress', 'queued'],
   });
   return interactiveSessions;

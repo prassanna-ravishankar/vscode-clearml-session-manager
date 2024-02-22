@@ -19,6 +19,7 @@ import * as consts from './constants';
 export interface ClearmlExtensionSettings {
   clearmlConfigFilePath: string;
   interpreter: string[];
+  clearmlProject: string;
 }
 
 /**
@@ -105,9 +106,14 @@ export async function getWorkspaceSettings(
     config.get<string>('clearmlConfigFilePath', getDefaultClearmlConfigFilePath()),
     workspace
   );
+  const clearmlProject: string = resolveSetting(
+    config.get<string>('clearmlProject', "DevOps"),
+    workspace
+  );
   const workspaceSettings: ClearmlExtensionSettings = {
     clearmlConfigFilePath: clearmlConfigFilePath,
     interpreter: resolveSettings(interpreter, workspace),
+    clearmlProject: clearmlProject,
   };
   return workspaceSettings;
 }
@@ -138,6 +144,7 @@ export async function getGlobalSettings(namespace: string): Promise<ClearmlExten
     clearmlConfigFilePath:
       getGlobalValue<string>(config, 'clearmlConfigFilePath') ?? getDefaultClearmlConfigFilePath(),
     interpreter: interpreter ?? [],
+    clearmlProject: getGlobalValue<string>(config, 'clearmlProject') ?? "DevOps",
   };
   return settings;
 }

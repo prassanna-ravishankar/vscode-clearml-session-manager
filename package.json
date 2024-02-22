@@ -52,6 +52,11 @@
           "type": "string",
           "description": "Path to clearml.conf file. If unset, defaults to ~/clearml.conf",
           "default": "~/clearml.conf"
+        },
+        "clearml-session-manager.clearmlProject": {
+          "type": "string",
+          "description": "Name of Project with interactive sessions. If unset, defaults to 'DevOps'",
+          "default": "DevOps"
         }
       }
     },
