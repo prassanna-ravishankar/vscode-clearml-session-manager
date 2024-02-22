@@ -1,33 +1,17 @@
 {
-  "name": "clearml-session-manager",
+  "name": "clearml-sessions",
   "publisher": "mlops-club",
   "version": "0.0.6",
-  "displayName": "ClearML Session Manager",
+  "displayName": "ClearML Sessions",
   "icon": "src/resources/clearml-logo.png",
   "author": {
-    "email": "eric.russia97+mlops-club@gmail.com",
+    "email": "me@prassanna.io",
     "name": "MLOps Club"
   },
   "contributors": [
     {
-      "name": "Eric Riddoch",
-      "url": "https://www.linkedin.com/in/eric-riddoch/"
-    },
-    {
-      "name": "Jordan Pierre",
-      "url": "https://www.linkedin.com/in/jordan-pierre/"
-    },
-    {
-      "name": "Jay Cui",
-      "url": "https://www.linkedin.com/in/shilongjaycui/"
-    },
-    {
-      "name": "Paul McSlarrow",
-      "url": "https://www.linkedin.com/in/paul-mcslarrow-58b8971b7/"
-    },
-    {
-      "name": "Saul Ifshin",
-      "url": "https://www.linkedin.com/in/saul-ifshin-a7187524b/"
+      "name": "Prassanna Ravishankar",
+      "url": "https://prassanna.io"
     }
   ],
   "license": "Apache-2.0",
@@ -46,7 +30,7 @@
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
-      "title": "ClearML Session Manager Configuration",
+      "title": "ClearML Sessions Configuration",
       "properties": {
         "clearml-session-manager.clearmlConfigFilePath": {
           "type": "string",

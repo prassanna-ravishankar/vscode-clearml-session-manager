@@ -25,7 +25,7 @@ type OnSshConnectRetryCallback = (
 ) => void;
 
 /**
- * Start the ClearML session subprocess with specific arguments and handle SSH connection details and retries.
+ * Start the s subprocess with specific arguments and handle SSH connection details and retries.
  */
 export async function startClearmlSessionSubprocess(
   interpreterPath: string,

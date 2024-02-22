@@ -25,7 +25,7 @@ export async function activate(context: vscode.ExtensionContext) {
    *
    * 1. Open the panel with `Ctrl + ~`
    * 2. Click on the "Output" tab
-   * 3. Select "ClearML Session Manager" output channel from the dropdown
+   * 3. Select "ClearML Sessions" output channel from the dropdown
    */
   const outputChannel = createOutputChannel(consts.EXTENSION_NAME);
   context.subscriptions.push(outputChannel, registerLogger(outputChannel));
