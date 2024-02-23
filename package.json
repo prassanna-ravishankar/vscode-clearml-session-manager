@@ -1,7 +1,7 @@
 {
   "name": "clearml-sessions",
   "publisher": "the-nomadic-coder",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "displayName": "ClearML Sessions",
   "icon": "src/resources/clearml-logo.png",
   "author": {
