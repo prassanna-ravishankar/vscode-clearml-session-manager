@@ -106,7 +106,7 @@ jobs:
         run: npm install --global vsce
       - name: Configure Git for Tagging
         run: |
-          git config --local user.email "me@prassanna.io""
+          git config --local user.email "me@prassanna.io"
           git config --local user.name "github-actions[bot]"
       - name: Create and Push Git Tag
         run: |
