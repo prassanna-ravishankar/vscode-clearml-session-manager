@@ -1,6 +1,6 @@
 {
   "name": "clearml-sessions",
-  "publisher": "mlops-club",
+  "publisher": "the-nomadic-coder",
   "version": "0.0.6",
   "displayName": "ClearML Sessions",
   "icon": "src/resources/clearml-logo.png",
@@ -18,7 +18,7 @@
   "description": "List, start, stop, and connect to ClearML Sessions from VS Code.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mlops-club/vscode-clearml-session-manager.git"
+    "url": "https://github.com/prassanna-ravishankar/vscode-clearml-session-manager.git"
   },
   "engines": {
     "vscode": "^1.83.0"
